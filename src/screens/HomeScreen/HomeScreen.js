@@ -1,24 +1,24 @@
-import React, { useState } from 'react'
-import { Image, Text, TextInput, TouchableOpacity, View, Button } from 'react-native'
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import React from 'react'
+import { Image, Text, TouchableOpacity, View, useWindowDimensions } from 'react-native'
 import styles from './styles';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import NavigationBar from 'react-native-navbar';
 import Row  from './row';
 import  Col  from './column'; 
 
 export default function HomeScreen({navigation}) {
+
+  const window = useWindowDimensions();
   return (
 
     <SafeAreaView style={styles.container}> 
 
-        <View style = {styles.container1}>
-          <Image source={require('../../../assets/images/JTSBoardLogo.png')} style={styles.image1}></Image>
+        <View style = {{height: window.height / 3}}>
+          <Image source={require('../../../assets/images/JTSBoardLogoBig.png')} style={styles.image1}></Image>
         </View>
-        <View style = {styles.container2}>
+        <View style = {{height: window.height / 6, alignItems: 'center'}}>
           <Text style = {styles.textfont}>What are you looking for?</Text>
         </View>
-        <Row >
+        <Row style = {{height: window.height / 4}}>
             <Col customStyles={{"flex":1}}>
               <TouchableOpacity style={styles.btnDetails}  onPress={() => navigation.navigate("Customer")}>
               <Image source={require('../../../assets/images/customerlist_.png')} style={styles.image}></Image>
@@ -38,7 +38,7 @@ export default function HomeScreen({navigation}) {
               </TouchableOpacity>
             </Col>
         </Row>
-        <Row >
+        <Row style = {{height: window.height / 4}}>
             <Col customStyles={{"flex":1}}>
               <TouchableOpacity style={styles.btnDetails1}  onPress={() => navigation.navigate("Expenses")}>
               <Image source={require('../../../assets/images/sales_.png')} style={styles.image}></Image>

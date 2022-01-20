@@ -20,7 +20,7 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.jstboard.app",
       "bitcode": "Release",
-      "buildNumber": "0.0.2"
+      "buildNumber": "0.0.3"
     },
     "android": {
       "adaptiveIcon": {

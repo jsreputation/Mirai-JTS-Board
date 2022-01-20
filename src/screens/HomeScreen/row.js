@@ -17,7 +17,5 @@ export default class Row extends Component{
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    // marginTop: 10,
-    // marginBottom: 10,
   }
 });
